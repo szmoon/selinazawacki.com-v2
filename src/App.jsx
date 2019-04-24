@@ -14,8 +14,7 @@ function App() {
         window='aboutWindow'
         text='about'
         alt='about-folder'
-        state={state}
-        dispatch={dispatch}
+        state={{ state, dispatch }}
       />
     </div>
   );

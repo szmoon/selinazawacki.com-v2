@@ -7,7 +7,7 @@ import mintFolder from '../assets/images/icons/folder-icon-mint.png';
 import purpleFolder from '../assets/images/icons/folder-icon-purple.png';
 
 export default function Folder(props) {
-  const { window, color, alt, text, state, dispatch} = props;
+  const { window, color, alt, text, state} = props;
   
   const style = {
     iconBox: {
@@ -40,8 +40,8 @@ export default function Folder(props) {
   return (
     <div
       style={style.iconBox}
-      onDoubleClick={() => increaseZ(window, state, dispatch)}
-      onTouchEnd={() => increaseZ(window, state, dispatch)}
+      onDoubleClick={() => increaseZ(window, state.state, state.dispatch)}
+      onTouchEnd={() => increaseZ(window, state.state, state.dispatch)}
     >
       <img src={folderImage} alt={alt} style={style.icon} />
       <p style={style.iconText}>{text}</p>

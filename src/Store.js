@@ -3,6 +3,7 @@ import React from 'react'
 export const Store = React.createContext();
 
 const initialState = {
+  highestZIndex: 0,
   aboutWindow: {
     open: false,
     position:[400, 50],
@@ -17,6 +18,11 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
+    case 'INCREASE_HIGHEST_ZINDEX':
+      return {
+        ...state,
+        highestZIndex: action.payload
+      };
     case 'ABOUT_WINDOW_ZINDEX':
       return {
         ...state,
