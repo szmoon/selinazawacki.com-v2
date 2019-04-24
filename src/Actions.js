@@ -1,7 +1,9 @@
 export const increaseZ = (window, state, dispatch) => {
-  const highestZIndex = state.highestZIndex; // get current highest zIndex
+  // get current highest zIndex
+  const highestZIndex = state.highestZIndex;
   const newHighestZ = highestZIndex + 1;
 
+  // decide which window's state to update
   let actionType;
   switch (window) {
     case 'aboutWindow':
@@ -15,17 +17,19 @@ export const increaseZ = (window, state, dispatch) => {
   }
 
   let payload = state[window];
-  payload.zIndex = newHighestZ; // todo: eventually -> highest z + 1
+  payload.zIndex = newHighestZ;
 
   let dispatchObj = {
     type: actionType,
     payload
   };
 
-  // todo: update highest z
+  // update 'global' highestZIndex state
   dispatch({
     type: 'INCREASE_HIGHEST_ZINDEX',
     payload: newHighestZ
   });
+
+  // update window zIndex
   return dispatch(dispatchObj);
 };
