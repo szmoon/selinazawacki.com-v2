@@ -2,9 +2,7 @@ import React from 'react';
 import './App.css';
 import { Store } from './Store';
 
-import Icon from './components/Icon';
-
-import folderPink from './assets/images/icons/folder-icon-pink.png';
+import Folder from './components/Folder';
 
 function App() {
   const { state, dispatch } = React.useContext(Store);
@@ -12,7 +10,13 @@ function App() {
   return (
     <div className='App'>
     {console.log(state)}
-       <Icon window='aboutWindow' text='about' src={folderPink} alt='about-folder' state={state} dispatch={dispatch} />
+      <Folder
+        window='aboutWindow'
+        text='about'
+        alt='about-folder'
+        state={state}
+        dispatch={dispatch}
+      />
     </div>
   );
 }
