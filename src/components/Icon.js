@@ -1,8 +1,9 @@
 import React from 'react'
+import { increaseZ } from '../Actions';
 
 export default function Icon(props) {
-  const { src, alt, text } = props;
-
+  const { window, src, alt, text, state, dispatch} = props;
+  
   const style = {
     iconBox: {
       float: 'left',
@@ -26,7 +27,7 @@ export default function Icon(props) {
   }
 
   return (
-    <div style={style.iconBox} onDoubleClick='iconClick-here-eventually' onTouchEnd='iconClick-here-eventually'>
+    <div style={style.iconBox} onDoubleClick={() => increaseZ(window, state, dispatch)} onTouchEnd='iconClick-here-eventually'>
       <img src={src} alt={alt} style={style.icon} />
       <p style={style.iconText}>{text}</p>
     </div>
