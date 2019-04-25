@@ -1,3 +1,9 @@
+This project uses:
+* [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+* [react-draggable](https://github.com/mzabriskie/react-draggable)
+
+------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
