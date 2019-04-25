@@ -1,5 +1,6 @@
 import React from 'react'
-import { increaseZ } from '../Actions';
+// import { increaseZ } from '../Actions';
+import { toggleWindow } from '../Actions';
 
 // images for different folder colors
 import pinkFolder from '../assets/images/icons/folder-icon-pink.png';
@@ -40,8 +41,9 @@ export default function Folder(props) {
   return (
     <div
       style={style.iconBox}
-      onDoubleClick={() => increaseZ(window, state.state, state.dispatch)}
-      onTouchEnd={() => increaseZ(window, state.state, state.dispatch)}
+      // onDoubleClick={() => increaseZ(window, state.state, state.dispatch)}
+      onDoubleClick={() => toggleWindow(window, true, state.state, state.dispatch)}
+      onTouchEnd={() => toggleWindow(window, true, state.state, state.dispatch)}
     >
       <img src={folderImage} alt={alt} style={style.icon} />
       <p style={style.iconText}>{text}</p>

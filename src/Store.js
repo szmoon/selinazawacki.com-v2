@@ -7,6 +7,7 @@ const initialState = {
   aboutWindow: {
     open: false,
     position:[400, 50],
+    size: [500,400],
     zIndex: 0
   },
   networkWindow: {
@@ -24,6 +25,16 @@ function reducer(state, action) {
         highestZIndex: action.payload
       };
     case 'ABOUT_WINDOW_ZINDEX':
+      return {
+        ...state,
+        aboutWindow: action.payload
+      };
+    case 'ABOUT_WINDOW_TOGGLE':
+      return {
+        ...state,
+        aboutWindow: action.payload
+      };
+    case 'ABOUT_WINDOW_POSITION':
       return {
         ...state,
         aboutWindow: action.payload
