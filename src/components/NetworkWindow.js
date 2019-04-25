@@ -1,7 +1,7 @@
 import React from 'react'
 import Window from './Window/Window';
 
-export default function AboutWindow(props) {
+export default function NetworkWindow(props) {
   const { window, state, dispatch } = props;
 
   // const style = {
@@ -10,7 +10,7 @@ export default function AboutWindow(props) {
   return (
     <Window
       window={window}
-      windowName='About'
+      windowName='Network'
       state={state}
       dispatch={dispatch}
     />

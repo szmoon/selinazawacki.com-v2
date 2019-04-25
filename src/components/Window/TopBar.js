@@ -2,7 +2,7 @@ import React from 'react'
 import CloseButton from './CloseButton';
 
 export default function TopBar(props) {
-  const { window, text, state } = props;
+  const { window, text, state, dispatch } = props;
 
   const style = {
     topBar: {
@@ -29,7 +29,7 @@ export default function TopBar(props) {
   return (
     <div style={style.topBar}>
       <p style={style.topBarP}>{text}</p>
-      <CloseButton window={window} state={state} />
+      <CloseButton window={window} state={state} dispatch={dispatch} />
     </div>
   );
 }

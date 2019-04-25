@@ -2,7 +2,7 @@ import React from 'react';
 import { toggleWindow } from '../../Actions';
 
 export default function CloseButton(props) {
-  const { window, state} = props;
+  const { window, state, dispatch } = props;
 
   const style = {
     closeButton: {
@@ -31,8 +31,8 @@ export default function CloseButton(props) {
   return (
     <div 
       style={style.closeButton} 
-      onMouseDown={() => toggleWindow(window, false, state.state, state.dispatch)}
-      onTouchStart={() => toggleWindow(window, false, state.state, state.dispatch)}
+      onMouseDown={() => toggleWindow(window, false, state, dispatch)}
+      onTouchStart={() => toggleWindow(window, false, state, dispatch)}
     >
       <p style={style.closeButtonP}>X</p>
     </div>

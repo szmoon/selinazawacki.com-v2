@@ -4,6 +4,8 @@ import { Store } from './Store';
 
 import Folder from './components/Folder';
 import AboutWindow from './components/AboutWindow';
+import NetworkWindow from './components/NetworkWindow';
+
 
 function App() {
   const { state, dispatch } = React.useContext(Store);
@@ -15,9 +17,19 @@ function App() {
         window='aboutWindow'
         text='about'
         alt='about-folder'
-        state={{ state, dispatch }}
+        state={state}
+        dispatch={dispatch}
       />
-      <AboutWindow state={{ state, dispatch }} />
+      <Folder
+        window='networkWindow'
+        color='mint'
+        text='network'
+        alt='network-folder'
+        state={state}
+        dispatch={dispatch}
+      />
+      <AboutWindow window='aboutWindow' state={state} dispatch={dispatch} />
+      <NetworkWindow window='networkWindow' state={state} dispatch={dispatch} />
     </div>
   );
 }

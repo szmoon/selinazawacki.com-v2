@@ -5,14 +5,17 @@ export const Store = React.createContext();
 const initialState = {
   highestZIndex: 0,
   aboutWindow: {
+    window: 'aboutWindow',
     open: false,
     position:[400, 50],
     size: [500,400],
     zIndex: 0
   },
   networkWindow: {
+    window: 'networkWindow',
     open: false,
     position: [370, 400],
+    size: [300,300],
     zIndex: 0
   },
 };
@@ -39,7 +42,17 @@ function reducer(state, action) {
         ...state,
         aboutWindow: action.payload
       };
+    case 'NETWORK_WINDOW_TOGGLE':
+      return {
+        ...state,
+        networkWindow: action.payload
+      };
     case 'NETWORK_WINDOW_ZINDEX':
+      return {
+        ...state,
+        networkWindow: action.payload
+      };
+    case 'NETWORK_WINDOW_POSITION':
       return {
         ...state,
         networkWindow: action.payload

@@ -8,7 +8,7 @@ import mintFolder from '../assets/images/icons/folder-icon-mint.png';
 import purpleFolder from '../assets/images/icons/folder-icon-purple.png';
 
 export default function Folder(props) {
-  const { window, color, alt, text, state} = props;
+  const { window, color, alt, text, state, dispatch} = props;
   
   const style = {
     iconBox: {
@@ -41,9 +41,9 @@ export default function Folder(props) {
   return (
     <div
       style={style.iconBox}
-      // onDoubleClick={() => increaseZ(window, state.state, state.dispatch)}
-      onDoubleClick={() => toggleWindow(window, true, state.state, state.dispatch)}
-      onTouchEnd={() => toggleWindow(window, true, state.state, state.dispatch)}
+      // onDoubleClick={() => increaseZ(state.state, state.dispatch)}
+      onDoubleClick={() => toggleWindow(window, true, state, dispatch)}
+      onTouchEnd={() => toggleWindow(window, true, state, dispatch)}
     >
       <img src={folderImage} alt={alt} style={style.icon} />
       <p style={style.iconText}>{text}</p>

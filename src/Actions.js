@@ -15,6 +15,9 @@ export const toggleWindow = (window, toggle, state, dispatch) => {
   let payload = state[window];
   payload.open = toggle;
 
+  // if opening window, make sure it has highest zIndex
+  if (toggle === true) increaseZ(window, state, dispatch);
+
   let dispatchObj = {
     type: actionType,
     payload
@@ -60,10 +63,10 @@ export const increaseZ = (window, state, dispatch) => {
   return dispatch(dispatchObj);
 };
 
-export const updateWindowPosition = (window, position, state, dispatch) => {
+export const updateWindowPosition = (position, state, dispatch) => {
   // decide which window's state to update
   let actionType;
-  switch (window) {
+  switch (state.window) {
     case 'aboutWindow':
       actionType = 'ABOUT_WINDOW_POSITION';
         break;
@@ -74,8 +77,9 @@ export const updateWindowPosition = (window, position, state, dispatch) => {
       actionType = '';
   }
 
-  let payload = state[window];
+  let payload = state;
   payload.position = position;
+
 
   let dispatchObj = {
     type: actionType,
