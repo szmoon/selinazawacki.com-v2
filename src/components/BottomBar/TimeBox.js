@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import volumeIcon from '../../assets/images/pngs/volume.png';
 
 export default function TimeBox() {
-  const [currentTime, setCurrentTime] = useState(format(new Date(), 'h:mm'));
+  const [currentTime, setCurrentTime] = useState(format(new Date(), 'h:mm a'));
   
   const style = {
     timeBox: {
@@ -30,6 +30,14 @@ export default function TimeBox() {
       opacity: '0.8',
     },
   } 
+
+  function updateTime() {
+    window.setInterval(function(){
+      setCurrentTime(format(new Date(), 'h:mm a'));
+    }, 30000);
+  }
+
+  updateTime();
 
   return (
     <div style={style.timeBox}>
