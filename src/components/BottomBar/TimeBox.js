@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { format } from 'date-fns';
 import volumeIcon from '../../assets/images/pngs/volume.png';
 
 export default function TimeBox() {
+  const [currentTime, setCurrentTime] = useState(format(new Date(), 'h:mm'));
+  
   const style = {
     timeBox: {
       float: 'right',
@@ -26,15 +29,12 @@ export default function TimeBox() {
       height: '18px',
       opacity: '0.8',
     },
-}
-
-
-  var currentdate = new Date(); 
-  var datetime =  currentdate.getHours() + ":"  + currentdate.getMinutes();
+  } 
 
   return (
     <div style={style.timeBox}>
-      <p><img src={volumeIcon} alt='volume-icon' style={style.miniIcon} /></p><p style={style.timeBoxP}>{datetime}</p>
+      <p><img src={volumeIcon} alt='volume-icon' style={style.miniIcon} /></p>
+      <p style={style.timeBoxP}>{currentTime}</p>
     </div>
   );
 }
