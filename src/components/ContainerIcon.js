@@ -1,5 +1,4 @@
-import React from 'react'
-// import { increaseZ } from '../Actions';
+import React from 'react';
 import { toggleWindow } from '../Actions';
 
 // images for different folder colors
@@ -8,6 +7,10 @@ import mintFolder from '../assets/images/icons/folder-icon-mint.png';
 import purpleFolder from '../assets/images/icons/folder-icon-purple.png';
 import txtIcon from '../assets/images/icons/txt-icon.png';
 import selinaIcon from '../assets/images/icons/selina-icon.png';
+import networkIcon from '../assets/images/icons/network-icon.png';
+import computerIcon from '../assets/images/icons/computer-icon.png';
+
+
 
 
 export default function ContainerIcon(props) {
@@ -49,6 +52,12 @@ export default function ContainerIcon(props) {
       break;
     case 'selina':
       iconImage = selinaIcon;
+      break;
+    case 'network':
+      iconImage = networkIcon;
+      break;
+    case 'computer':
+      iconImage = computerIcon;
       break;
     default:
       iconImage = pinkFolder;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const Store = React.createContext();
 
@@ -28,8 +28,8 @@ const initialState = {
   networkWindow: {
     window: 'networkWindow',
     open: false,
-    position: [370, 400],
-    size: [500,400],
+    position: [370, 380],
+    size: [480,380],
     zIndex: 0
   },
 };
