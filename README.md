@@ -1,6 +1,7 @@
 This project uses:
 * [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 * [react-draggable](https://github.com/mzabriskie/react-draggable)
+* [date-fns](https://date-fns.org/)
 
 ------------------------------------------
 
