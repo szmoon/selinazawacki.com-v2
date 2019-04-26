@@ -9,9 +9,6 @@ import selinaIcon from '../assets/images/icons/selina-icon.png';
 export default function AboutWindow(props) {
   const { window, state, dispatch } = props;
 
-  const style = {
-  }
-
   return (
     <Window
       window={window}

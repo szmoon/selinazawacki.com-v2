@@ -6,7 +6,7 @@ const initialState = {
   highestZIndex: 0,
   aboutWindow: {
     window: 'aboutWindow',
-    open: true,
+    open: false,
     position:[400, 50],
     size: [500,400],
     zIndex: 0
@@ -20,7 +20,7 @@ const initialState = {
   },
   aboutImage: {
     window: 'aboutImage',
-    open: true,
+    open: false,
     position:[660, 150],
     size: [300,375],
     zIndex: 0

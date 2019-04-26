@@ -4,6 +4,7 @@ import { Store } from './Store';
 
 import ContainerIcon from './components/ContainerIcon';
 import AboutWindow from './components/AboutWindow';
+import AboutTxt from './components/AboutTxt';
 import AboutImage from './components/AboutImage';
 import NetworkWindow from './components/NetworkWindow';
 
@@ -29,6 +30,7 @@ function App() {
         dispatch={dispatch}
       />
       <AboutWindow window='aboutWindow' state={state} dispatch={dispatch} />
+      <AboutTxt window='aboutTxt' state={state} dispatch={dispatch} />
       <AboutImage window='aboutImage' state={state} dispatch={dispatch} />
       <NetworkWindow window='networkWindow' state={state} dispatch={dispatch} />
     </div>
