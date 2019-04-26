@@ -1,7 +1,9 @@
 body {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   font-family: Arial, Helvetica, sans-serif;
+  cursor: default;
+  margin: 0px;
   overflow: hidden;
 }
 
