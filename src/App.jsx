@@ -9,6 +9,8 @@ import AboutTxt from './components/AboutTxt';
 import AboutImage from './components/AboutImage';
 import ContactTxt from './components/ContactTxt';
 import NetworkWindow from './components/NetworkWindow';
+import BottomBar from './components/BottomBar/BottomBar';
+
 
 import computerIcon from './assets/images/icons/computer-icon.png';
 
@@ -60,6 +62,8 @@ function App() {
       <AboutImage window='aboutImage' state={state} dispatch={dispatch} />
       <ContactTxt window='contactTxt' state={state} dispatch={dispatch} />
       <NetworkWindow window='networkWindow' state={state} dispatch={dispatch} />
+
+      <BottomBar />
     </div>
   );
 }
