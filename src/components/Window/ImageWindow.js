@@ -1,3 +1,4 @@
+// todo: combine with Window.js
 import React from 'react';
 import TopBar from './TopBar';
 import GreyBar from './GreyBar';
@@ -5,13 +6,13 @@ import { increaseZ } from '../../Actions';
 import Draggable from 'react-draggable'; 
 
 export default function Window(props) {
-  const { window, windowName, state, dispatch } = props;
+  const { image, imageAlt, window, windowName, state, dispatch } = props;
 
   let style = {
     window: {
       position: 'absolute',
       width: state[window].size[0],
-      height: state[window].size[1],
+      // height: state[window].size[1],
       left: state[window].position[0],
       top: state[window].position[1],
       borderTopLeftRadius: '15px',
@@ -29,9 +30,12 @@ export default function Window(props) {
     windowCont: {
       position: 'relative',
       width: '100%',
-      height: '87%',
-      margin: 'auto',
-    }
+      height: state[window].size[1],
+    },
+    image: {
+      position: 'relative',
+      width: '100%',
+    },
   }
 
   function startDrag(e) {
@@ -50,7 +54,7 @@ export default function Window(props) {
           <strong><TopBar window={window} text={windowName} state={state} dispatch={dispatch} /></strong>
           <GreyBar />
           <div style={style.windowCont}>
-            {props.children}
+            <img src={image} alt={imageAlt} style={style.image} />
           </div>
         </div>
       </Draggable>

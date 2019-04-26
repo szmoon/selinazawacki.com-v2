@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import { Store } from './Store';
 
-import Folder from './components/Folder';
+import ContainerIcon from './components/ContainerIcon';
 import AboutWindow from './components/AboutWindow';
+import AboutImage from './components/AboutImage';
 import NetworkWindow from './components/NetworkWindow';
 
 
@@ -12,23 +13,23 @@ function App() {
 
   return (
     <div className='App'>
-    {/* {console.log(state)} */}
-      <Folder
+      <ContainerIcon
         window='aboutWindow'
         text='about'
         alt='about-folder'
         state={state}
         dispatch={dispatch}
       />
-      <Folder
+      <ContainerIcon
         window='networkWindow'
-        color='mint'
+        type='mint'
         text='network'
         alt='network-folder'
         state={state}
         dispatch={dispatch}
       />
       <AboutWindow window='aboutWindow' state={state} dispatch={dispatch} />
+      <AboutImage window='aboutImage' state={state} dispatch={dispatch} />
       <NetworkWindow window='networkWindow' state={state} dispatch={dispatch} />
     </div>
   );

@@ -6,9 +6,12 @@ import { toggleWindow } from '../Actions';
 import pinkFolder from '../assets/images/icons/folder-icon-pink.png';
 import mintFolder from '../assets/images/icons/folder-icon-mint.png';
 import purpleFolder from '../assets/images/icons/folder-icon-purple.png';
+import txtIcon from '../assets/images/icons/txt-icon.png';
+import selinaIcon from '../assets/images/icons/selina-icon.png';
 
-export default function Folder(props) {
-  const { window, color, alt, text, state, dispatch} = props;
+
+export default function ContainerIcon(props) {
+  const { window, type, alt, text, state, dispatch} = props;
   
   const style = {
     iconBox: {
@@ -33,10 +36,23 @@ export default function Folder(props) {
   }
 
   // choose image for icon based on color prop
-  let folderImage = pinkFolder;
-  if (color === 'mint') folderImage = mintFolder;
-  if (color === 'purple') folderImage = purpleFolder;
-
+  let iconImage;
+  switch (type) {
+    case 'mint':
+      iconImage = mintFolder;
+      break;
+    case 'purple':
+      iconImage = purpleFolder;
+      break;
+    case 'txt':
+      iconImage = txtIcon;
+      break;
+    case 'selina':
+      iconImage = selinaIcon;
+      break;
+    default:
+      iconImage = pinkFolder;
+  }
 
   return (
     <div
@@ -45,7 +61,7 @@ export default function Folder(props) {
       onDoubleClick={() => toggleWindow(window, true, state, dispatch)}
       onTouchEnd={() => toggleWindow(window, true, state, dispatch)}
     >
-      <img src={folderImage} alt={alt} style={style.icon} />
+      <img src={iconImage} alt={alt} style={style.icon} />
       <p style={style.iconText}>{text}</p>
     </div>
   );

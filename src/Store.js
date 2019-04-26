@@ -6,16 +6,30 @@ const initialState = {
   highestZIndex: 0,
   aboutWindow: {
     window: 'aboutWindow',
-    open: false,
+    open: true,
     position:[400, 50],
     size: [500,400],
+    zIndex: 0
+  },
+  aboutTxt: {
+    window: 'aboutTxt',
+    open: false,
+    position:[80, 300],
+    size: [400,400],
+    zIndex: 0
+  },
+  aboutImage: {
+    window: 'aboutImage',
+    open: true,
+    position:[660, 150],
+    size: [300,375],
     zIndex: 0
   },
   networkWindow: {
     window: 'networkWindow',
     open: false,
     position: [370, 400],
-    size: [300,300],
+    size: [500,400],
     zIndex: 0
   },
 };

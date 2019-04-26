@@ -69,10 +69,10 @@ export const updateWindowPosition = (position, state, dispatch) => {
   switch (state.window) {
     case 'aboutWindow':
       actionType = 'ABOUT_WINDOW_POSITION';
-        break;
+      break;
     case 'networkWindow':
       actionType = 'NETWORK_WINDOW_POSITION';
-        break;
+      break;
     default:
       actionType = '';
   }
