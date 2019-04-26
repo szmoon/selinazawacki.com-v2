@@ -5,7 +5,7 @@ import GreyBar from './GreyBar';
 import { increaseZ } from '../../Actions';
 import Draggable from 'react-draggable'; 
 
-export default function Window(props) {
+export default function TxtWindow(props) {
   const { window, windowName, state, dispatch } = props;
 
   let style = {

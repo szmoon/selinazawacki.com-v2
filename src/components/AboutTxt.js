@@ -1,14 +1,9 @@
-
-import React from 'react'
+import React from 'react';
 import TxtWindow from './Window/TxtWindow';
 
 
 export default function AboutTxt(props) {
   const { window, state, dispatch } = props;
-
-  const style = {
-    
-  }
 
   return (
     <TxtWindow

@@ -1,17 +1,27 @@
 export const toggleWindow = (window, toggle, state, dispatch) => {
   // decide which window's state to update
+  
   let actionType;
   switch (window) {
     case 'aboutWindow':
       actionType = 'ABOUT_WINDOW_TOGGLE';
-        break;
+      break;
+    case 'aboutImage':
+      actionType = 'ABOUT_IMAGE_TOGGLE';
+      break;
+    case 'aboutTxt':
+      actionType = 'ABOUT_TXT_TOGGLE';
+      break;
+    case 'contactTxt':
+      actionType = 'CONTACT_TXT_TOGGLE';
+      break;
     case 'networkWindow':
       actionType = 'NETWORK_WINDOW_TOGGLE';
-        break;
+      break;
     default:
       actionType = '';
   }
-
+  
   let payload = state[window];
   payload.open = toggle;
 
@@ -37,10 +47,19 @@ export const increaseZ = (window, state, dispatch) => {
   switch (window) {
     case 'aboutWindow':
       actionType = 'ABOUT_WINDOW_ZINDEX';
-        break;
+      break;
+    case 'aboutTxt':
+      actionType = 'ABOUT_TXT_ZINDEX';
+      break;
+    case 'aboutImage':
+      actionType = 'ABOUT_IMAGE_ZINDEX';
+      break;
+    case 'contactTxt':
+      actionType = 'CONTACT_TXT_ZINDEX';
+      break;
     case 'networkWindow':
       actionType = 'NETWORK_WINDOW_ZINDEX';
-        break;
+      break;
     default:
       actionType = '';
   }
@@ -63,29 +82,29 @@ export const increaseZ = (window, state, dispatch) => {
   return dispatch(dispatchObj);
 };
 
-export const updateWindowPosition = (position, state, dispatch) => {
-  // decide which window's state to update
-  let actionType;
-  switch (state.window) {
-    case 'aboutWindow':
-      actionType = 'ABOUT_WINDOW_POSITION';
-      break;
-    case 'networkWindow':
-      actionType = 'NETWORK_WINDOW_POSITION';
-      break;
-    default:
-      actionType = '';
-  }
+// export const updateWindowPosition = (position, state, dispatch) => {
+//   // decide which window's state to update
+//   let actionType;
+//   switch (state.window) {
+//     case 'aboutWindow':
+//       actionType = 'ABOUT_WINDOW_POSITION';
+//       break;
+//     case 'networkWindow':
+//       actionType = 'NETWORK_WINDOW_POSITION';
+//       break;
+//     default:
+//       actionType = '';
+//   }
 
-  let payload = state;
-  payload.position = position;
+//   let payload = state;
+//   payload.position = position;
 
 
-  let dispatchObj = {
-    type: actionType,
-    payload
-  };
+//   let dispatchObj = {
+//     type: actionType,
+//     payload
+//   };
 
-  // update window position
-  return dispatch(dispatchObj);
-};
+//   // update window position
+//   return dispatch(dispatchObj);
+// };

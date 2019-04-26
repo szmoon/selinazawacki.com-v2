@@ -25,15 +25,23 @@ const initialState = {
     size: [300,375],
     zIndex: 0
   },
+  contactTxt: {
+    window: 'contactTxt',
+    open: false,
+    position:[460, 480],
+    size: [450,250],
+    zIndex: 0
+  },
   networkWindow: {
     window: 'networkWindow',
     open: false,
-    position: [370, 380],
+    position: [360, 380],
     size: [480,380],
     zIndex: 0
   },
 };
 
+// todo: figure out why this was working when some were missing
 function reducer(state, action) {
   switch (action.type) {
     case 'INCREASE_HIGHEST_ZINDEX':
@@ -41,20 +49,45 @@ function reducer(state, action) {
         ...state,
         highestZIndex: action.payload
       };
-    case 'ABOUT_WINDOW_ZINDEX':
-      return {
-        ...state,
-        aboutWindow: action.payload
-      };
     case 'ABOUT_WINDOW_TOGGLE':
       return {
         ...state,
         aboutWindow: action.payload
       };
-    case 'ABOUT_WINDOW_POSITION':
+    case 'ABOUT_WINDOW_ZINDEX':
       return {
         ...state,
         aboutWindow: action.payload
+      };
+    case 'ABOUT_IMAGE_TOGGLE':
+      return {
+        ...state,
+        aboutImage: action.payload
+      };
+    case 'ABOUT_IMAGE_ZINDEX':
+      return {
+        ...state,
+        aboutImage: action.payload
+      };
+    case 'ABOUT_TXT_TOGGLE':
+      return {
+        ...state,
+        aboutTxt: action.payload
+      };
+    case 'ABOUT_TXT_ZINDEX':
+      return {
+        ...state,
+        aboutTxt: action.payload
+      };
+    case 'CONTACT_TXT_TOGGLE':
+      return {
+        ...state,
+        contactTxt: action.payload
+      };
+    case 'CONTACT_TXT_ZINDEX':
+      return {
+        ...state,
+        contactTxt: action.payload
       };
     case 'NETWORK_WINDOW_TOGGLE':
       return {
@@ -62,11 +95,6 @@ function reducer(state, action) {
         networkWindow: action.payload
       };
     case 'NETWORK_WINDOW_ZINDEX':
-      return {
-        ...state,
-        networkWindow: action.payload
-      };
-    case 'NETWORK_WINDOW_POSITION':
       return {
         ...state,
         networkWindow: action.payload
