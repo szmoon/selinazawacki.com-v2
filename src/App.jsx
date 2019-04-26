@@ -3,11 +3,14 @@ import './App.css';
 import { Store } from './Store';
 
 import ContainerIcon from './components/ContainerIcon';
+import LinkIcon from './components/LinkIcon';
 import AboutWindow from './components/AboutWindow';
 import AboutTxt from './components/AboutTxt';
 import AboutImage from './components/AboutImage';
 import ContactTxt from './components/ContactTxt';
 import NetworkWindow from './components/NetworkWindow';
+
+import computerIcon from './assets/images/icons/computer-icon.png';
 
 
 function App() {
@@ -44,6 +47,12 @@ function App() {
           alt='contact-folder'
           state={state}
           dispatch={dispatch}
+        />
+        <LinkIcon
+          iconImage={computerIcon}
+          link='http://blog.selinazawacki.com/'
+          text='blog'
+          alt='blog-computer-icon'
         />
       </div>
       <AboutWindow window='aboutWindow' state={state} dispatch={dispatch} />
