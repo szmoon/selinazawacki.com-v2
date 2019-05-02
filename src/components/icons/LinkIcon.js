@@ -1,8 +1,7 @@
-import React from 'react'
-import { toggleWindow } from '../Actions';
+import React from 'react';
 
-export default function ContainerIcon(props) {
-  const { window, iconImage, alt, text, state, dispatch} = props;
+export default function LinkIcon(props) {
+  const { iconImage, link, alt, text} = props;
   
   const style = {
     iconBox: {
@@ -14,26 +13,30 @@ export default function ContainerIcon(props) {
       flexWrap: 'wrap',
       justifyContent: 'center',
     },
+    icon: {
+      width: '60px',
+      margin: 'auto',
+    },
     iconText: {
       color: '#ffffff',
       fontSize: '16px',
       textShadow: '1px 1px 5px rgb(78, 78, 78)',
       margin: 'auto',
     },
-    image: {
-      width: '60px',
-      margin: 'auto',
-      border: '1px solid #dadada'
-    },
+  }
+
+  function openUrl(url) {
+    var win = window.open(url, '_blank');
+    win.focus();
   }
 
   return (
     <div
       style={style.iconBox}
-      onDoubleClick={() => toggleWindow(window, true, state, dispatch)}
-      onTouchEnd={() => toggleWindow(window, true, state, dispatch)}
+      onDoubleClick={(e) => openUrl(link, e)}
+      onTouchEnd={(e) => openUrl(link, e)}
     >
-      <img src={iconImage} alt={alt} style={style.image} />
+      <img src={iconImage} alt={alt} style={style.icon} />
       <p style={style.iconText}>{text}</p>
     </div>
   );

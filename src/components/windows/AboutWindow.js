@@ -1,9 +1,9 @@
 import React from 'react'
-import Window from './Window/Window';
-import ContainerIcon from '../components/ContainerIcon';
-import ImageIcon from '../components/ImageIcon';
+import Window from './../Window/Window';
+import WindowIcon from '../../components/icons/WindowIcon';
+import ImageIcon from '../../components/icons/ImageIcon';
 
-import selinaIcon from '../assets/images/icons/selina-icon.png';
+import selinaIcon from '../../assets/images/icons/selina-icon.png';
 
 
 export default function AboutWindow(props) {
@@ -16,7 +16,7 @@ export default function AboutWindow(props) {
       state={state}
       dispatch={dispatch}
     >
-      <ContainerIcon
+      <WindowIcon
         window='aboutTxt'
         type='txt'
         text='about.txt'

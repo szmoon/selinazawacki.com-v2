@@ -1,6 +1,6 @@
 import React from 'react';
-import Window from './Window/Window';
-import WindowContentsTxt from './Window/WindowContentsTxt';
+import Window from './../Window/Window';
+import WindowContentsTxt from './../Window/WindowContentsTxt';
 
 export default function ContactTxt(props) {
   const { window, state, dispatch } = props;

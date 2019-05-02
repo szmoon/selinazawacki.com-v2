@@ -1,19 +1,19 @@
 import React from 'react';
-import { toggleWindow } from '../Actions';
+import { toggleWindow } from '../../Actions';
 
 // images for different folder colors
-import pinkFolder from '../assets/images/icons/folder-icon-pink.png';
-import mintFolder from '../assets/images/icons/folder-icon-mint.png';
-import purpleFolder from '../assets/images/icons/folder-icon-purple.png';
-import txtIcon from '../assets/images/icons/txt-icon.png';
-import selinaIcon from '../assets/images/icons/selina-icon.png';
-import networkIcon from '../assets/images/icons/network-icon.png';
-import computerIcon from '../assets/images/icons/computer-icon.png';
+import pinkFolder from '../../assets/images/icons/folder-icon-pink.png';
+import mintFolder from '../../assets/images/icons/folder-icon-mint.png';
+import purpleFolder from '../../assets/images/icons/folder-icon-purple.png';
+import txtIcon from '../../assets/images/icons/txt-icon.png';
+import selinaIcon from '../../assets/images/icons/selina-icon.png';
+import networkIcon from '../../assets/images/icons/network-icon.png';
+import computerIcon from '../../assets/images/icons/computer-icon.png';
 
 
 
 
-export default function ContainerIcon(props) {
+export default function WindowIcon(props) {
   const { window, type, alt, text, state, dispatch} = props;
   
   const style = {

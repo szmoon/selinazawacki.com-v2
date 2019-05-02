@@ -1,8 +1,8 @@
 import React from 'react'
-import Window from './Window/Window';
-import WindowContentsImage from './Window/WindowContentsImage';
+import Window from './../Window/Window';
+import WindowContentsImage from './../Window/WindowContentsImage';
 
-import selinaImage from '../assets/images/pngs/selina-large.png';
+import selinaImage from '../../assets/images/pngs/selina-large.png';
 
 export default function AboutImage(props) {
   const { window, state, dispatch } = props;

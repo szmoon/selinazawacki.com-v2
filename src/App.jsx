@@ -2,13 +2,13 @@ import React from 'react';
 import './App.css';
 import { Store } from './Store';
 
-import ContainerIcon from './components/ContainerIcon';
-import LinkIcon from './components/LinkIcon';
-import AboutWindow from './components/AboutWindow';
-import AboutTxt from './components/AboutTxt';
-import AboutImage from './components/AboutImage';
-import ContactTxt from './components/ContactTxt';
-import NetworkWindow from './components/NetworkWindow';
+import WindowIcon from './components/icons/WindowIcon';
+import LinkIcon from './components/icons/LinkIcon';
+import AboutWindow from './components/windows/AboutWindow';
+import AboutTxt from './components/windows/AboutTxt';
+import AboutImage from './components/windows/AboutImage';
+import ContactTxt from './components/windows/ContactTxt';
+import NetworkWindow from './components/windows/NetworkWindow';
 import BottomBar from './components/BottomBar/BottomBar';
 
 
@@ -27,14 +27,14 @@ function App() {
   return (
     <div className='App'>
       <div style={style.iconContainer}>
-        <ContainerIcon
+        <WindowIcon
           window='aboutWindow'
           text='about'
           alt='about-folder'
           state={state}
           dispatch={dispatch}
         />
-        <ContainerIcon
+        <WindowIcon
           window='networkWindow'
           type='network'
           text='network'
@@ -42,7 +42,7 @@ function App() {
           state={state}
           dispatch={dispatch}
         />
-        <ContainerIcon
+        <WindowIcon
           window='contactTxt'
           type='txt'
           text='contact.txt'
