@@ -1,18 +1,20 @@
 import React from 'react';
-import TxtWindow from './Window/TxtWindow';
-
+import Window from './Window/Window';
+import WindowContentsTxt from './Window/WindowContentsTxt';
 
 export default function ContactTxt(props) {
   const { window, state, dispatch } = props;
 
   return (
-    <TxtWindow
+    <Window
       window={window}
       windowName='contact.txt'
       state={state}
       dispatch={dispatch}
     >
-      You can reach me at <br></br>szmoon [at] gmail [dot] com
-    </TxtWindow>
+      <WindowContentsTxt>
+        You can reach me at <br></br>szmoon [at] gmail [dot] com
+      </WindowContentsTxt>
+    </Window>
   );
 }

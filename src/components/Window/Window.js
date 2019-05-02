@@ -5,7 +5,7 @@ import { increaseZ } from '../../Actions';
 import Draggable from 'react-draggable'; 
 
 export default function Window(props) {
-  const { window, windowName, state, dispatch } = props;
+  const { window, windowName, state, dispatch, image = false } = props;
 
   let style = {
     window: {
@@ -40,6 +40,16 @@ export default function Window(props) {
 
   function clickWindow() {
     increaseZ(window, state, dispatch);
+  }
+
+  // slightly different styling for images
+  if (image) {
+    delete style.window.height;
+    style.windowCont = {
+      position: 'relative',
+      width: '100%',
+      height: state[window].size[1],
+    }
   }
 
   if (state[window].open === true) {

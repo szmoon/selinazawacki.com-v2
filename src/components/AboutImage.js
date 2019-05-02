@@ -1,5 +1,6 @@
 import React from 'react'
-import ImageWindow from './Window/ImageWindow';
+import Window from './Window/Window';
+import WindowContentsImage from './Window/WindowContentsImage';
 
 import selinaImage from '../assets/images/pngs/selina-large.png';
 
@@ -7,13 +8,17 @@ export default function AboutImage(props) {
   const { window, state, dispatch } = props;
 
   return (
-    <ImageWindow
-      image={selinaImage}
-      imageAlt='selina.png'
+    <Window
       window={window}
-      windowName='selina.png'
+      windowName='about.txt'
       state={state}
       dispatch={dispatch}
-    />
+      image={true}
+    >
+      <WindowContentsImage
+        image={selinaImage}
+        imageAlt='selina.png'
+      />
+    </Window>
   );
 }
