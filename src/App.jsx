@@ -10,7 +10,7 @@ import AboutImage from './components/windows/AboutImage';
 import ContactTxt from './components/windows/ContactTxt';
 import NetworkWindow from './components/windows/NetworkWindow';
 import BottomBar from './components/BottomBar/BottomBar';
-
+import StartMenu from './components/StartMenu/StartMenu';
 
 import computerIcon from './assets/images/icons/computer-icon.png';
 
@@ -64,6 +64,7 @@ function App() {
       <NetworkWindow window='networkWindow' state={state} dispatch={dispatch} />
 
       <BottomBar />
+      <StartMenu />
     </div>
   );
 }

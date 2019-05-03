@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import CloseButton from './CloseButton';
 
 export default function TopBar(props) {

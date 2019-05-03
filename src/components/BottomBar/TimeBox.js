@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { format } from 'date-fns';
-import volumeIcon from '../../assets/images/pngs/volume.png';
+import volumeIcon from '../../assets/images/volume.png';
 
 export default function TimeBox() {
   const [currentTime, setCurrentTime] = useState(format(new Date(), 'h:mm a'));

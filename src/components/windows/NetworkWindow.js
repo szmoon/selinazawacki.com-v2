@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 import Window from './../Window/Window';
 import LinkIcon from '../../components/icons/LinkIcon';
 
 import twitterIcon from '../../assets/images/icons/twitter-icon.png';
 import githubIcon from '../../assets/images/icons/github-icon.png';
 import linkedinIcon from '../../assets/images/icons/linkedin-icon.png';
-
 
 export default function NetworkWindow(props) {
   const { window, state, dispatch } = props;

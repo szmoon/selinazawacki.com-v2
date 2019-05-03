@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import StartButton from './StartButton';
 import TimeBox from './TimeBox';
 

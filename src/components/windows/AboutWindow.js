@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Window from './../Window/Window';
 import WindowIcon from '../../components/icons/WindowIcon';
 import ImageIcon from '../../components/icons/ImageIcon';
