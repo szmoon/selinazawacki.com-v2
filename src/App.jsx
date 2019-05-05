@@ -88,7 +88,6 @@ function App() {
         dispatch={dispatch}
       />
       <StartMenu
-        window='startMenu'
         state={state}
         dispatch={dispatch}
       />

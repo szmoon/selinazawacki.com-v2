@@ -1,13 +1,11 @@
 import React from 'react';
 import TopBar from './TopBar';
 import BottomBar from './BottomBar';
-import { mainBlue, mainBlueLight } from '../../assets/colors';
-
-// import avatarToast from '../../assets/images/avatar-toast.jpg';
-
+import MiddleContent from './MiddleContent';
+import { mainBlue } from '../../assets/colors';
 
 export default function StartMenu(props) {
-  const { window, state, dispatch } = props;
+  const { state, dispatch } = props;
 
   const style = {
     startMenu: {
@@ -19,24 +17,21 @@ export default function StartMenu(props) {
       borderTopLeftRadius: '15px',
       borderTopRightRadius: '15px',
       width: '350px',
-      height: '550px',
+      height: '500px',
       display: 'flex',
       flexDirection: 'column',
       zIndex: state.startMenu.zIndex,
     },
-    middle: {
-      flexGrow: 1,
-    },
   }
 
   // if zindex is higher than all zindexes, startmenu should be open
-  if (state.startMenu.zIndex >= state.highestZIndex) {
+  if (state.startMenu.zIndex >= state.highestZIndex  && state.startMenu.zIndex !== 0) {
     return (
       <div id='startMenu' style={style.startMenu}>
         <TopBar 
           state={state}
         />
-        <div style={style.middle}>middle</div>
+        <MiddleContent />
         <BottomBar
           state={state}
           dispatch={dispatch}
