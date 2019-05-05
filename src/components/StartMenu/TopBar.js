@@ -2,7 +2,6 @@ import React from 'react';
 import { mainBlue, mainBlueLight } from '../../assets/colors';
 
 import avatarToast from '../../assets/images/avatar-toast.jpg';
-import { stat } from 'fs';
 
 export default function TopBar(props) {
   const { state} = props;
