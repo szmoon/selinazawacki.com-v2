@@ -2,7 +2,9 @@ import React from 'react';
 import StartButton from './StartButton';
 import TimeBox from './TimeBox';
 
-export default function BottomBar() {
+export default function BottomBar(props) {
+  const { state, dispatch } = props;
+
   const style = {
     bottomBar: {
       position: 'fixed',
@@ -17,7 +19,11 @@ export default function BottomBar() {
 
   return (
     <div style={style.bottomBar}>
-      <StartButton />
+      <StartButton
+        window='startMenu'
+        state={state}
+        dispatch={dispatch}
+      />
       <TimeBox />
     </div>
   );

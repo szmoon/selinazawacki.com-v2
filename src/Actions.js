@@ -82,6 +82,21 @@ export const increaseZ = (window, state, dispatch) => {
   return dispatch(dispatchObj);
 };
 
+export const increaseHighestZIndex = (state, dispatch) => {
+  // get current highest zIndex
+  const highestZIndex = state.highestZIndex;
+  const newHighestZ = highestZIndex + 1;
+
+  // update 'global' highestZIndex state
+  let dispatchObj = {
+    type: 'INCREASE_HIGHEST_ZINDEX',
+    payload: newHighestZ
+  };
+
+  // update window zIndex
+  return dispatch(dispatchObj);
+};
+
 // export const updateWindowPosition = (position, state, dispatch) => {
 //   // decide which window's state to update
 //   let actionType;

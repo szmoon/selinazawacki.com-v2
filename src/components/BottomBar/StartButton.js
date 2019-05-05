@@ -1,7 +1,8 @@
 import React from 'react';
+import { increaseZ } from '../../Actions';
 
-export default function StartButton() {
-  // const { window, text, state, dispatch } = props;
+export default function StartButton(props) {
+  const { window, state, dispatch } = props;
 
   const style = {
     startButton: {
@@ -25,7 +26,10 @@ export default function StartButton() {
   }
 
   return (
-    <div style={style.startButton}>
+    <div style={style.startButton}
+      onMouseUp={() => increaseZ(window, state, dispatch)}
+      onTouchEnd={() => increaseZ(window, state, dispatch)}
+    >
       <p style={style.startButtonP}>start</p>
     </div>
   );

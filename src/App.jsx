@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Store } from './Store';
+import { increaseHighestZIndex } from './Actions';
 
 import WindowIcon from './components/icons/WindowIcon';
 import LinkIcon from './components/icons/LinkIcon';
@@ -14,7 +15,6 @@ import StartMenu from './components/StartMenu/StartMenu';
 
 import computerIcon from './assets/images/icons/computer-icon.png';
 
-
 function App() {
   const { state, dispatch } = React.useContext(Store);
 
@@ -23,6 +23,21 @@ function App() {
       width: '65px',
     }
   }
+
+  // increase highest zIndex when anywhere is clicked
+  function callIncreaseHighestZAction() {
+    increaseHighestZIndex(state, dispatch);
+  }
+  
+  useEffect(() => {
+    document.addEventListener('mousedown', callIncreaseHighestZAction, true);
+    document.addEventListener('touchstart', callIncreaseHighestZAction, true);
+
+    return function cleanup() {
+      document.removeEventListener('mousedown', callIncreaseHighestZAction, true);
+      document.addEventListener('touchstart', callIncreaseHighestZAction, true);
+    };
+  });
 
   return (
     <div className='App'>
@@ -63,8 +78,13 @@ function App() {
       <ContactTxt window='contactTxt' state={state} dispatch={dispatch} />
       <NetworkWindow window='networkWindow' state={state} dispatch={dispatch} />
 
-      <BottomBar />
-      <StartMenu />
+      <BottomBar
+        state={state}
+        dispatch={dispatch}
+      />
+      <StartMenu
+        state={state}
+      />
     </div>
   );
 }

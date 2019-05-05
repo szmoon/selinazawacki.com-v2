@@ -5,7 +5,9 @@ import avatarToast from '../../assets/images/avatar-toast.jpg';
 import logOff from '../../assets/images/log-off.jpg';
 import turnOff from '../../assets/images/turn-off.jpg';
 
-export default function StartMenu() {
+export default function StartMenu(props) {
+  const { state } = props;
+
   const style = {
     startMenu: {
       position: 'fixed',
@@ -17,9 +19,9 @@ export default function StartMenu() {
       borderTopRightRadius: '15px',
       width: '350px',
       height: '550px',
-      zIndex: 3000,
       display: 'flex',
       flexDirection: 'column',
+      zIndex: state.startMenu.zIndex,
     },
     topBar: {
       height: '60px',
@@ -63,19 +65,24 @@ export default function StartMenu() {
     },
   }
 
-  return (
-    <div style={style.startMenu}>
-      <div style={style.topBar}>
-        <img src={avatarToast} alt='avatar-toast' style={style.topBar.avatar}/>
-        Toast
+  // if zindex is higher than all zindexes, startmenu should be open
+  if (state.startMenu.zIndex >= state.highestZIndex) {
+    return (
+      <div style={style.startMenu}>
+        <div style={style.topBar}>
+          <img src={avatarToast} alt='avatar-toast' style={style.topBar.avatar}/>
+          Toast
+        </div>
+        <div style={style.middle}>middle</div>
+        <div style={style.bottomBar}>
+          <img src={logOff} alt='avatar-toast' style={style.bottomBar.button}/>
+          Log Off
+          <img src={turnOff} alt='avatar-toast' style={style.bottomBar.button}/>
+          Turn Off
+        </div>
       </div>
-      <div style={style.middle}>middle</div>
-      <div style={style.bottomBar}>
-        <img src={logOff} alt='avatar-toast' style={style.bottomBar.button}/>
-        Log Off
-        <img src={turnOff} alt='avatar-toast' style={style.bottomBar.button}/>
-        Turn Off
-      </div>
-    </div>
-  );
+    );
+  } else {
+    return null;
+  }
 }

@@ -39,6 +39,11 @@ const initialState = {
     size: [480,380],
     zIndex: 0
   },
+  startMenu: {
+    window: 'startMenu',
+    // open: true,
+    zIndex: 0,
+  },
 };
 
 // todo: figure out why this was working when some were missing
