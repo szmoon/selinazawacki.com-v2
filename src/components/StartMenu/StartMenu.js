@@ -1,4 +1,5 @@
 import React from 'react';
+import TopBar from './TopBar';
 import { mainBlue, mainBlueLight } from '../../assets/colors';
 
 import avatarToast from '../../assets/images/avatar-toast.jpg';
@@ -69,10 +70,9 @@ export default function StartMenu(props) {
   if (state.startMenu.zIndex >= state.highestZIndex) {
     return (
       <div id='startMenu' style={style.startMenu}>
-        <div style={style.topBar}>
-          <img src={avatarToast} alt='avatar-toast' style={style.topBar.avatar}/>
-          Toast
-        </div>
+        <TopBar 
+          state={state}
+        />
         <div style={style.middle}>middle</div>
         <div style={style.bottomBar}>
           <img src={logOff} alt='avatar-toast' style={style.bottomBar.button}/>

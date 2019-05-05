@@ -4,6 +4,7 @@ export const Store = React.createContext();
 
 const initialState = {
   highestZIndex: 0,
+  user: 'Toast',
   aboutWindow: {
     window: 'aboutWindow',
     open: false,
