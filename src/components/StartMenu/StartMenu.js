@@ -6,7 +6,7 @@ import logOff from '../../assets/images/log-off.jpg';
 import turnOff from '../../assets/images/turn-off.jpg';
 
 export default function StartMenu(props) {
-  const { state } = props;
+  const { window, state, dispatch } = props;
 
   const style = {
     startMenu: {
@@ -68,7 +68,7 @@ export default function StartMenu(props) {
   // if zindex is higher than all zindexes, startmenu should be open
   if (state.startMenu.zIndex >= state.highestZIndex) {
     return (
-      <div style={style.startMenu}>
+      <div id='startMenu' style={style.startMenu}>
         <div style={style.topBar}>
           <img src={avatarToast} alt='avatar-toast' style={style.topBar.avatar}/>
           Toast

@@ -10,9 +10,6 @@ import selinaIcon from '../../assets/images/icons/selina-icon.png';
 import networkIcon from '../../assets/images/icons/network-icon.png';
 import computerIcon from '../../assets/images/icons/computer-icon.png';
 
-
-
-
 export default function WindowIcon(props) {
   const { window, type, alt, text, state, dispatch} = props;
   

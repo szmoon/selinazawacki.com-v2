@@ -25,8 +25,13 @@ function App() {
   }
 
   // increase highest zIndex when anywhere is clicked
-  function callIncreaseHighestZAction() {
-    increaseHighestZIndex(state, dispatch);
+  function callIncreaseHighestZAction(e) {
+    let path = e.path;
+    let clickedStartMenu = path.filter((x) => x.id === 'startMenu');
+
+    if (clickedStartMenu.length === 0) {
+      increaseHighestZIndex(state, dispatch);
+    }
   }
   
   useEffect(() => {
@@ -83,7 +88,9 @@ function App() {
         dispatch={dispatch}
       />
       <StartMenu
+        window='startMenu'
         state={state}
+        dispatch={dispatch}
       />
     </div>
   );
